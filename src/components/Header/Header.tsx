@@ -7,10 +7,9 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaRegCircleUser } from "react-icons/fa6";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getImage } from "@/utils/getImage";
 
 const categories = ["Shop", "Collection", "Promotion", "Blog", "Contacts"];
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
-console.log("Base Path:", basePath);
 
 const Header = () => {
   const pathname = usePathname();
@@ -27,7 +26,7 @@ const Header = () => {
         <div className="cursor-pointer flex-shrink-0 h-full flex items-center">
           <Link href="/">
             <Image
-              src={`/assets/logo/logo.png`}
+              src={getImage("/assets/logo/logo.png")}
               alt="Logo"
               width={196}
               height={23}

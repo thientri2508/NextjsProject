@@ -7,7 +7,7 @@ export const Banner = () => {
       <Image
         src="/assets/banner/banner1.jpg"
         alt="Banner"
-        layout="fill"
+        fill
         objectFit="cover"
         priority
       />
