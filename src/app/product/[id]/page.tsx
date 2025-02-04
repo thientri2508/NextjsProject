@@ -8,10 +8,9 @@ import { ProductCarousel } from "@/components/ProductCarousel/ProductCarousel";
 import { productsData } from "@/mockData/productData";
 import { Product } from "@/types/Product";
 import { CardProduct } from "@/components/CardProduct/CardProduct";
-import { useParams } from 'next/navigation';
 
-export default function ProductDetail() {
-  const { id } = useParams();
+export default function ProductDetail({ params }: { params: { id: string } }) {
+  const { id } = params;
 
   const product = productsData.find((product) => product.id.toString() === id);
 
@@ -62,4 +61,10 @@ export default function ProductDetail() {
   );
 }
 
-export const dynamic = "force-static";
+export async function generateStaticParams() {
+  return [
+    { id: "1" },
+    { id: "2" },
+    { id: "3" },
+  ];
+}
