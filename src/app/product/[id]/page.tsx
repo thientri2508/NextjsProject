@@ -62,3 +62,4 @@ export default function ProductDetail() {
   );
 }
 
+export const dynamic = "force-static";
