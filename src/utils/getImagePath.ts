@@ -1,7 +1,8 @@
 import getConfig from "next/config";
 
 export function getImagePath(imagePath: string) {
-  const { publicRuntimeConfig } = getConfig();
-  const basePath = publicRuntimeConfig?.basePath || "";
-  return `${basePath}${imagePath}`;
-}
+    const config = getConfig();
+    const basePath = config?.publicRuntimeConfig?.basePath || "";
+  
+    return `${basePath}${imagePath}`;
+  }
