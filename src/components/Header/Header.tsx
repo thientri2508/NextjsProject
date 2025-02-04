@@ -24,7 +24,7 @@ const Header = () => {
         <div className="cursor-pointer flex-shrink-0 h-full flex items-center">
           <Link href="/">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/assets/logo/logo.png`}
+              src={`/NextjsProject/assets/logo/logo.png`}
               alt="Logo"
               width={196}
               height={23}
