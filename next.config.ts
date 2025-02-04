@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   output: "export",
   //basePath: isProd ? "/NextjsProject" : "",
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
+  env: {
+    NEXT_PUBLIC_BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  },
   assetPrefix: isProd ? "/NextjsProject/" : "",
   images: {
     unoptimized: true,
