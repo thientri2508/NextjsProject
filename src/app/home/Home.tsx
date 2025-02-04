@@ -13,12 +13,12 @@ import FadeInImage from "@/components/ScrollEffect/FadeInImage";
 
 const Home = () => {
   const images = [
-    "/assets/banner/banner5.jpg",
-    "/assets/banner/banner6.jpg",
-    "/assets/banner/banner7.jpg",
-    "/assets/banner/banner8.jpg",
-    "/assets/banner/banner9.jpg",
-    "/assets/banner/banner10.jpg",
+    "./assets/banner/banner5.jpg",
+    "./assets/banner/banner6.jpg",
+    "./assets/banner/banner7.jpg",
+    "./assets/banner/banner8.jpg",
+    "./assets/banner/banner9.jpg",
+    "./assets/banner/banner10.jpg",
   ];
 
   return (

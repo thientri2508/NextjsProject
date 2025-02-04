@@ -9,6 +9,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const categories = ["Shop", "Collection", "Promotion", "Blog", "Contacts"];
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
+console.log("Base Path:", basePath); // Kiểm tra giá trị
 
 const Header = () => {
   const pathname = usePathname();
@@ -25,7 +27,7 @@ const Header = () => {
         <div className="cursor-pointer flex-shrink-0 h-full flex items-center">
           <Link href="/">
             <Image
-              src={`./assets/logo/logo.png`}
+              src={`/assets/logo/logo.png`}
               alt="Logo"
               width={196}
               height={23}

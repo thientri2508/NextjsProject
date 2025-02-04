@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="flex flex-col gap-y-4 w-[265px]">
           <Image
             src="/assets/logo/footer-logo.png"
-            alt="Logo"
+            alt=""
             width={196}
             height={23}
             priority
@@ -19,7 +19,7 @@ export const Footer = () => {
           </div>
           <Image
             src="/assets/payment/payment.png"
-            alt="Logo"
+            alt=""
             width={218}
             height={23}
             priority
