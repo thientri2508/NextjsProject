@@ -8,8 +8,9 @@ import { productsData } from "@/mockData/productData";
 import { Product } from "@/types/Product";
 import { CardProduct } from "@/components/CardProduct/CardProduct";
 
-export default function ProductDetail({ params }: { params: { id: string } }) {
-  const { id } = params;
+
+export default async  function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
 
   const product = productsData.find((product) => product.id.toString() === id);
 
@@ -60,11 +61,15 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
   );
 }
 
-export async function generateStaticParams() {
-  const params = [
-    { id: "1" },
-    { id: "2" },
-    { id: "3" },
-  ];
-  return params;
+// export async function generateStaticParams() {
+//   const params = [
+//     { id: "1" },
+//     { id: "2" },
+//     { id: "3" },
+//   ];
+//   return params;
+// }
+
+export function generateStaticParams() {
+  return [{ id: '1' }, { id: '2' }, { id: '3' }]
 }
