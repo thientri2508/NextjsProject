@@ -50,8 +50,8 @@ export const ProductInfor = ({product} : {product: Product}) => {
           Categories: <b>{product?.category}</b>
         </div>
       </div>
-      <div className="text-[24px] font-semibold text-[#111]">
-        {product?.name}
+      <div className="text-[24px] font-semibold text-[#111] capitalize">
+        {product?.name.toLowerCase()}
       </div>
       <div className="flex gap-1 items-center">
         <StarRating rating={product?.rating} />
@@ -60,7 +60,7 @@ export const ProductInfor = ({product} : {product: Product}) => {
       </div>
       <div className="flex gap-4 items-end mt-2">
         <div className="text-[30px] font-semibold">${product?.price}</div>
-        <div className="text-[20px] text-[#b7b7b7] pb-1">$300.0</div>
+        <div className="text-[20px] text-[#b7b7b7] pb-1 line-through">$300.0</div>
       </div>
       <div className="text-[15px] text-[#3d3d3d] mt-2 text-center md:text-start">
         Coat with quilted lining and an adjustable hood. Featuring long sleeves

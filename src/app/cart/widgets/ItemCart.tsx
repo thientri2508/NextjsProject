@@ -7,6 +7,7 @@ import { GoTrash } from "react-icons/go";
 import { CartProduct } from "@/types/CartProduct";
 import { productsData } from "@/mockData/productData";
 import { useProductModal } from "@/context/ProductModalContext";
+import Link from "next/link";
 
 interface ItemCartProps {
   product: CartProduct;
@@ -62,15 +63,16 @@ export const ItemCart: React.FC<ItemCartProps> = ({ product }) => {
     <tr className="border-b border-gray-200 *:py-5">
       <td>
         <div className="flex flex-col md:flex-row gap-7 items-start md:items-center">
-          <Image
+          <Link href={`/product/${product.id}`}><Image
             src={productInfor?.image || "/assets/default.png"}
             alt=""
             width={90}
             height={90}
-          ></Image>
+            className="cursor-pointer"
+          ></Image></Link>
           <div>
-            <div className="text-[15px] text-[#111]">{productInfor?.name}</div>
-            <div className="text-[18px] font-semibold">
+            <div className="text-[15px] text-[#111] w-[150px] sm:w-[200px] xl:w-[300px] line-clamp-3 sm:line-clamp-2 overflow-hidden text-ellipsis capitalize">{productInfor?.name.toLowerCase()}</div>
+            <div className="text-[18px] font-semibold mt-1">
               ${productInfor?.price}
             </div>
             <div

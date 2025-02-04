@@ -82,14 +82,14 @@ export const ModalAddToCart = () => {
               </div>
             </div>
             <div className="w-[70%] sm:w-[48%] md:w-[41%]">
-              <div className="text-[22px] font-semibold text-[#111]">
-                {product?.name}
+              <div className="text-[22px] font-semibold text-[#111] line-clamp-2 overflow-hidden text-ellipsis capitalize">
+                {product?.name.toLowerCase()}
               </div>
               <div className="flex gap-3 items-end mt-1 sm:mt-2">
                 <div className="text-[26px] font-semibold">
                   ${product?.price}
                 </div>
-                <div className="text-[#b7b7b7] pb-1">$300.0</div>
+                <div className="text-[#b7b7b7] pb-1 line-through">$300.0</div>
               </div>
               <div className="flex flex-col gap-2 mt-2 sm:mt-4 font-medium">
                 <div>Size:</div>

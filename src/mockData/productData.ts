@@ -1,7 +1,7 @@
 export const productsData = [
     {
         id: 1,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'EMBROIDERED SHIRT WITH 2 LEAF STRIPES NECKLACE SLIMFIT FORM SM160',
         image: "/assets/product/product-1.jpg",
         sub_image: ["/assets/product/product-1-1.jpg","/assets/product/product-1-2.jpg","/assets/product/product-1-3.jpg","/assets/product/product-1-4.jpg"],
         price: 67.24,
@@ -12,7 +12,7 @@ export const productsData = [
     },
     {
         id: 2,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'ROUND-NECKLACE T-SHIRT PRINTED WITH THE LETTERS STAY STRONG REGULAR FORM AT162 BLACK',
         image: "/assets/product/product-2.jpg",
         sub_image: ["/assets/product/product-2-1.jpg","/assets/product/product-2-2.jpg","/assets/product/product-2-3.jpg","/assets/product/product-2-4.jpg"],
         price: 43.48,
@@ -23,7 +23,7 @@ export const productsData = [
     },
     {
         id: 3,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'REGULAR SUMMER ESCAPE AT075 YELLOW T-SHIRT',
         image: "/assets/product/product-3.jpg",
         sub_image: ["/assets/product/product-3-1.jpg","/assets/product/product-3-2.jpg","/assets/product/product-3-3.jpg","/assets/product/product-3-4.jpg"],
         price: 60.9,
@@ -34,7 +34,7 @@ export const productsData = [
     },
     {
         id: 4,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'ECLECTIC PREP FORM REGULAR EMBROIDERED JEANS QJ109 BLUE DARK',
         image: "/assets/product/product-4.jpg",
         sub_image: ["/assets/product/product-4-1.jpg","/assets/product/product-4-2.jpg","/assets/product/product-4-3.jpg","/assets/product/product-4-4.jpg"],
         price: 31.37,
@@ -45,7 +45,7 @@ export const productsData = [
     },
     {
         id: 5,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'PREMIUM SLIMFIT FORM RAYON FABRIC SLIM TROUSERS QT031 BLACK',
         image: "/assets/product/product-5.jpg",
         sub_image: ["/assets/product/product-5-1.jpg","/assets/product/product-5-2.jpg","/assets/product/product-5-3.jpg","/assets/product/product-5-4.jpg"],
         price: 98.49,
@@ -56,7 +56,7 @@ export const productsData = [
     },
     {
         id: 6,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'BLACK JEANS SHORTS WITH SILVER WASH CROSSROAD POCKET STRAIGHT FORM QS052',
         image: "/assets/product/product-6.jpg",
         sub_image: ["/assets/product/product-6-1.jpg","/assets/product/product-6-2.jpg","/assets/product/product-6-3.jpg","/assets/product/product-6-4.jpg"],
         price: 49.66,
@@ -67,7 +67,7 @@ export const productsData = [
     },
     {
         id: 7,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'PARACHUTE JACKET PRESSED WITH BOX REGULAR FORM AK065 BLACK',
         image: "/assets/product/product-7.jpg",
         sub_image: ["/assets/product/product-7-1.jpg","/assets/product/product-7-2.jpg","/assets/product/product-7-3.jpg","/assets/product/product-7-4.jpg"],
         price: 26.28,
@@ -78,7 +78,7 @@ export const productsData = [
     },
     {
         id: 8,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'DERBY SHOES GI021 BLACK',
         image: "/assets/product/product-8.jpg",
         sub_image: ["/assets/product/product-8-1.jpg","/assets/product/product-8-2.jpg","/assets/product/product-8-3.jpg","/assets/product/product-8-4.jpg"],
         price: 44.23,
@@ -89,7 +89,7 @@ export const productsData = [
     },
     {
         id: 9,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'TENNIS CLUB MU010 WHITE EMBROIDERED BOOM CAP',
         image: "/assets/product/product-9.jpg",
         sub_image: ["/assets/product/product-9-1.jpg","/assets/product/product-9-2.jpg","/assets/product/product-9-3.jpg","/assets/product/product-9-4.jpg"],
         price: 67.22,
@@ -100,7 +100,7 @@ export const productsData = [
     },
     {
         id: 10,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'CASUAL TX014 STOMACH BAG BLUE-DARK',
         image: "/assets/product/product-10.jpg",
         sub_image: ["/assets/product/product-10-1.jpg","/assets/product/product-10-2.jpg","/assets/product/product-10-3.jpg","/assets/product/product-10-4.jpg"],
         price: 54.33,
@@ -111,7 +111,7 @@ export const productsData = [
     },
     {
         id: 11,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'SLIMFIT FORM VEST AV031',
         image: "/assets/product/product-11.jpg",
         sub_image: ["/assets/product/product-11-1.jpg","/assets/product/product-11-2.jpg","/assets/product/product-11-3.jpg","/assets/product/product-11-4.jpg"],
         price: 42.12,
@@ -122,7 +122,7 @@ export const productsData = [
     },
     {
         id: 12,
-        name: 'Áo Thun Nam Basic Cotton',
+        name: 'STRIPED HOODIE WITH EMBEDDED STRIPED LOGO ON Wrist REGULAR FORM AH007 BEIGE',
         image: "/assets/product/product-12.jpg",
         sub_image: ["/assets/product/product-12-1.jpg","/assets/product/product-12-2.jpg","/assets/product/product-12-3.jpg","/assets/product/product-12-4.jpg"],
         price: 51.3,

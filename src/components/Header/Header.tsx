@@ -2,17 +2,22 @@
 import Image from "next/image";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { RiSearchLine } from "react-icons/ri";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegCircleUser } from "react-icons/fa6";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const categories = ["Shop", "Collection", "Promotion", "Blog", "Contacts"];
 
 const Header = () => {
+  const pathname = usePathname();
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
 
+  useEffect(() => {
+    setIsOpenMenu(false);
+  }, [pathname]);
   return (
     <header className="w-full h-[90px] bg-white sticky z-[60] top-0 items-center transition-all shadow-custom-shadow">
       <div className="max-w-[470px] sm:max-w-[850px] md:max-w-[790px] lg:max-w-[910px] xl:max-w-[1170px] m-auto h-full flex items-center px-3 sm:px-10 md:px-0 justify-between md:justify-center md:gap-[60px] lg:gap-[75px] xl:gap-[110px]">
@@ -45,7 +50,7 @@ const Header = () => {
           <div className="hidden xl:block relative">
             <input
               type="search"
-              placeholder="Tìm kiếm sản phẩm..."
+              placeholder="Search product..."
               className="hidden outline-none text-[15px] border-solid border-2 pl-4 pr-10 py-1 lg:block lg:w-48 xl:w-52 focus:shadow-custom-shadow-inp focus:border-sky-200 transition-all"
             ></input>
             <div className="absolute z-10 top-[8px] right-[13px] cursor-pointer">
@@ -63,14 +68,17 @@ const Header = () => {
             />
             <input
               type="search"
-              placeholder="Tìm kiếm sản phẩm..."
+              placeholder="Search product..."
               className={`${
                 isOpenSearch ? "block" : "hidden"
               } outline-none border-solid text-[14px] border-2 px-4 py-1 w-48 absolute z-[60] top-[42px] right-[-15px] focus:shadow-custom-shadow-inp focus:border-sky-200 transition-all`}
             ></input>
           </div>
 
-          <Link href="/cart" className="relative cursor-pointer w-[50px] hidden md:block">
+          <Link
+            href="/cart"
+            className="relative cursor-pointer w-[50px] hidden md:block"
+          >
             <MdOutlineShoppingBag size={28} />
             <div className="absolute z-10 w-[30px] h-[20px] text-[10px] text-[#FFF] rounded-[20px] bg-[#e53637] right-0 top-[-10px] flex items-center justify-center">
               <span>0</span>
@@ -109,20 +117,20 @@ const Header = () => {
           <div className="w-full flex flex-col gap-y-5 px-6">
             <div className="flex justify-center gap-12 *:cursor-pointer pt-12">
               <FaRegHeart size={24} />
-              <div className="relative">
+              <Link href="/cart" className="relative">
                 <MdOutlineShoppingBag size={26} />
                 <div className="absolute z-10 w-[30px] h-[20px] text-[10px] text-[#FFF] rounded-[20px] bg-[#e53637] right-[-20px] top-[-10px] flex items-center justify-center">
                   <span>0</span>
                 </div>
-              </div>
+              </Link>
               <FaRegCircleUser size={24} />
             </div>
 
             <div className="relative">
               <input
                 type="search"
-                placeholder="Tìm kiếm sản phẩm..."
-                className="outline-none w-full border-gray-300 border-2 pl-4 pr-10 py-1 focus:shadow-custom-shadow-inp focus:border-sky-200 transition-all"
+                placeholder="Search product..."
+                className="outline-none w-full border-gray-300 text-[14px] border-2 pl-4 pr-10 py-1 focus:shadow-custom-shadow-inp focus:border-sky-200 transition-all"
               ></input>
               <div className="absolute z-10 top-[8px] right-[24px] cursor-pointer">
                 <RiSearchLine size={18} />
@@ -132,7 +140,7 @@ const Header = () => {
             <ul className="flex flex-col gap-y-5 text-[17px] font-semibold mt-3 ml-3 w-[87%]">
               {categories.map((category, index) => (
                 <Link href={`/${category.toLowerCase()}`} key={index}>
-                  <li className="cursor-pointer transition-colors relative group inline-block pb-1 w-[220px]">
+                  <li className="cursor-pointer transition-colors relative group inline-block pb-1 w-[100%]">
                     <span className="transition-all duration-300 ease-in-out">
                       {category}
                     </span>

@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <div className="w-full">
       <Breadcrumb label="Shopping Cart" />
-      <div className="max-w-[800px] lg:max-w-[900px] xl:max-w-[1170px] m-auto flex flex-col lg:flex-row items-center lg:items-start justify-between mt-[40px] md:mt-[70px]">
+      <div className="max-w-[800px] lg:max-w-[950px] xl:max-w-[1170px] m-auto flex flex-col lg:flex-row items-center lg:items-start justify-between mt-[40px] md:mt-[70px]">
         <div className="w-[90%] lg:w-[70%]">
           <table className="w-full text-left text-gray-700">
             <thead>

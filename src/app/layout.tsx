@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton/ScrollToTopButton";
 import { ProductModalProvider } from "@/context/ProductModalContext";
 import { ModalAddToCart } from "@/components/ModalAddToCart/ModalAddToCart";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Male Fashion",
@@ -26,7 +27,10 @@ export default function DashboardLayout({
           <Header />
           <ModalAddToCart />
           <ScrollToTopButton />
-          <main>{children}</main>
+          <main>
+            {children}
+            <SpeedInsights />
+          </main>
           <Footer />
         </ProductModalProvider>
       </body>

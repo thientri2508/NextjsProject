@@ -47,10 +47,13 @@ export const CardProduct: React.FC<CardProductProps> = ({
             widthConfig == "carousel" ? "" : "w-full"
           } aspect-square object-cover`}
         ></Image>
-        <div className="mt-[18px]">{product.name}</div>
+        <div className="mt-[18px] mb-[8px] line-clamp-2 overflow-hidden text-ellipsis capitalize">{product.name.toLowerCase()}</div>
       </Link>
-      <div className="mt-[8px]"><StarRating rating={product.rating} /></div>
-      <div className="font-bold text-[18px] mt-[8px]">${product.price}</div>
+      <div className="mt-auto"><StarRating rating={product.rating} /></div>
+      <div className="flex items-center gap-3 text-[20px] mt-[8px]">
+        <div className="font-semibold">${product?.price}</div>
+        <div className="text-[14px] text-[#b7b7b7] pt-1 line-through">$300.0</div>
+      </div>
     </div>
   );
 };

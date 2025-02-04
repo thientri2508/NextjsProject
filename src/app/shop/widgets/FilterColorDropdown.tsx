@@ -26,7 +26,7 @@ const FilterColorDropdown: React.FC<FilterColorDropdownProps> = ({ colors }) => 
           {colors.map((color, index) => (
             <div
               key={index}
-              className="w-7 h-7 rounded-full cursor-pointer hover:opacity-75"
+              className="w-7 h-7 rounded-full cursor-pointer hover:opacity-50"
               style={{
                 backgroundColor: color,
                 border: "1px solid #e5e5e5",
