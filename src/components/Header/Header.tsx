@@ -11,7 +11,6 @@ import { usePathname } from "next/navigation";
 const categories = ["Shop", "Collection", "Promotion", "Blog", "Contacts"];
 
 const Header = () => {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const pathname = usePathname();
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
@@ -19,14 +18,14 @@ const Header = () => {
   useEffect(() => {
     setIsOpenMenu(false);
   }, [pathname]);
-  
+
   return (
     <header className="w-full h-[90px] bg-white sticky z-[60] top-0 items-center transition-all shadow-custom-shadow">
       <div className="max-w-[470px] sm:max-w-[850px] md:max-w-[790px] lg:max-w-[910px] xl:max-w-[1170px] m-auto h-full flex items-center px-3 sm:px-10 md:px-0 justify-between md:justify-center md:gap-[60px] lg:gap-[75px] xl:gap-[110px]">
         <div className="cursor-pointer flex-shrink-0 h-full flex items-center">
           <Link href="/">
             <Image
-              src={`${basePath}/assets/logo/logo.png`}
+              src={`./assets/logo/logo.png`}
               alt="Logo"
               width={196}
               height={23}
