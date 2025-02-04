@@ -1,4 +1,3 @@
-"use client"
 import { BiChevronRight } from "react-icons/bi";
 import { ProductImage } from "../widgets/ProductImage";
 import { ProductInfor } from "../widgets/ProductInfor";
