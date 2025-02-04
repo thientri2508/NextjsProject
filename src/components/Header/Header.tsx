@@ -7,6 +7,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaRegCircleUser } from "react-icons/fa6";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getImagePath } from "@/utils/getImagePath";
 
 const categories = ["Shop", "Collection", "Promotion", "Blog", "Contacts"];
 
@@ -24,7 +25,7 @@ const Header = () => {
         <div className="cursor-pointer flex-shrink-0 h-full flex items-center">
           <Link href="/">
             <Image
-              src={`/NextjsProject/assets/logo/logo.png`}
+              src={getImagePath("/assets/logo/logo.png")} 
               alt="Logo"
               width={196}
               height={23}
