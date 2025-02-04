@@ -7,7 +7,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaRegCircleUser } from "react-icons/fa6";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { getImagePath } from "@/utils/getImagePath";
+import { useRouter } from "next/router";
 
 const categories = ["Shop", "Collection", "Promotion", "Blog", "Contacts"];
 
@@ -15,6 +15,7 @@ const Header = () => {
   const pathname = usePathname();
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
+  const { basePath } = useRouter();
 
   useEffect(() => {
     setIsOpenMenu(false);
@@ -25,7 +26,7 @@ const Header = () => {
         <div className="cursor-pointer flex-shrink-0 h-full flex items-center">
           <Link href="/">
             <Image
-              src={getImagePath("/assets/logo/logo.png")} 
+              src={`${basePath}/assets/logo/logo.png`}
               alt="Logo"
               width={196}
               height={23}
