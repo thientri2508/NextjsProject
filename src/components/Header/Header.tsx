@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 
 const categories = ["Shop", "Collection", "Promotion", "Blog", "Contacts"];
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
-console.log("Base Path:", basePath); // Kiểm tra giá trị
+console.log("Base Path:", basePath);
 
 const Header = () => {
   const pathname = usePathname();

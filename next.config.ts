@@ -4,11 +4,7 @@ const isProd = process.env.NODE_ENV === "production";
 const nextConfig: NextConfig = {
   /* config options here */
   output: "export",
-  //basePath: isProd ? "/NextjsProject" : "",
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
-  env: {
-    NEXT_PUBLIC_BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  },
+  basePath: isProd ? "/NextjsProject" : "",
   assetPrefix: isProd ? "/NextjsProject/" : "",
   images: {
     unoptimized: true,
