@@ -61,9 +61,10 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
 }
 
 export async function generateStaticParams() {
-  return [
+  const params = [
     { id: "1" },
     { id: "2" },
     { id: "3" },
   ];
+  return params;
 }
