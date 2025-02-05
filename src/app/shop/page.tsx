@@ -8,6 +8,7 @@ import {
 
 import ProductList from "./widgets/ProductList";
 import { getProductsByFilter } from "@/lib/product";
+import { Suspense } from "react";
 
 export default async function Page() {
   const queryClient = new QueryClient();
@@ -24,7 +25,9 @@ export default async function Page() {
         <ProductFilter />
         <div className="w-[100%] md:w-[66%] lg:w-[74%]">
           <HydrationBoundary state={dehydrate(queryClient)}>
+          <Suspense fallback={<div>Loading...</div>}>
             <ProductList />
+            </Suspense>
           </HydrationBoundary>
         </div>
       </div>
