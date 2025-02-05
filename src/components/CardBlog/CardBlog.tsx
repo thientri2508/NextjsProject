@@ -1,4 +1,5 @@
 import { Blog } from "@/types/Blog";
+import { getImage } from "@/utils/getImage";
 import Image from "next/image";
 import { PiCalendarDotsThin } from "react-icons/pi";
 
@@ -10,7 +11,7 @@ export const CardBlog: React.FC<CardBlogProps> = ({blog}) =>{
   return (
     <div className="w-[calc(90%-28px)] sm:w-[calc(80%-28px)] md:w-[calc(50%-28px)] xl:w-[calc(33.33%-28px)] relative h-[420px] cursor-pointer group">
       <Image
-        src={blog.image}
+        src={getImage(blog.image)}
         alt=""
         width={360}
         height={270}

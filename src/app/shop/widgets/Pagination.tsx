@@ -1,14 +1,18 @@
+import { product_page_size } from "@/constants/constants.pageSize";
 import { useState } from "react";
 
 interface PaginationProps {
   page: number;
-  pageSize: number;
   total: number;
   onPageChange: (page: number) => void;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ page, pageSize, total, onPageChange }) => {
-  const totalPages = Math.ceil(total / pageSize);
+const Pagination: React.FC<PaginationProps> = ({
+  page,
+  total,
+  onPageChange,
+}) => {
+  const totalPages = Math.ceil(total / product_page_size);
   const [currentPage, setCurrentPage] = useState(page);
 
   // Tính các trang cần hiển thị
@@ -25,7 +29,14 @@ const Pagination: React.FC<PaginationProps> = ({ page, pageSize, total, onPageCh
       } else if (currentPage >= totalPages - 1) {
         pageNumbers.push(1, "...", totalPages - 2, totalPages - 1, totalPages);
       } else {
-        pageNumbers.push(1, "...", currentPage - 1, currentPage, currentPage + 1, "...");
+        pageNumbers.push(
+          1,
+          "...",
+          currentPage - 1,
+          currentPage,
+          currentPage + 1,
+          "..."
+        );
       }
     }
 
@@ -54,12 +65,18 @@ const Pagination: React.FC<PaginationProps> = ({ page, pageSize, total, onPageCh
       {/* Nút phân trang */}
       {pageNumbers.map((number, index) =>
         number === "..." ? (
-          <span key={index} className="px-3 py-1">...</span>
+          <span key={index} className="px-3 py-1">
+            ...
+          </span>
         ) : (
           <button
             key={index}
             onClick={() => handlePageChange(Number(number))}
-            className={`px-3 py-1 rounded ${number === currentPage ? "bg-[#111] text-white" : "bg-gray-200 hover:bg-gray-300"}`}
+            className={`px-3 py-1 rounded ${
+              number === currentPage
+                ? "bg-[#111] text-white"
+                : "bg-gray-200 hover:bg-gray-300"
+            }`}
           >
             {number}
           </button>

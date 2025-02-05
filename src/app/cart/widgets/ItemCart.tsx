@@ -8,6 +8,7 @@ import { CartProduct } from "@/types/CartProduct";
 import { productsData } from "@/mockData/productData";
 import { useProductModal } from "@/context/ProductModalContext";
 import Link from "next/link";
+import { getImage } from "@/utils/getImage";
 
 interface ItemCartProps {
   product: CartProduct;
@@ -64,7 +65,7 @@ export const ItemCart: React.FC<ItemCartProps> = ({ product }) => {
       <td>
         <div className="flex flex-col md:flex-row gap-7 items-start md:items-center">
           <Link href={`/product/${product.id}`}><Image
-            src={productInfor?.image || "/assets/default.png"}
+            src={getImage(productInfor?.image ?? "")}
             alt=""
             width={90}
             height={90}

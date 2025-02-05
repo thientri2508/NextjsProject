@@ -1,3 +1,4 @@
+import { getImage } from "@/utils/getImage";
 import Image from "next/image"
 
 export const Banner = () => {
@@ -5,10 +6,10 @@ export const Banner = () => {
     <div className="relative w-full h-[900px]">
       {/* Ảnh nền */}
       <Image
-        src="/assets/banner/banner1.jpg"
+        src={getImage("/assets/banner/banner1.jpg")}
         alt="Banner"
         fill
-        objectFit="cover"
+        style={{ objectFit: "cover" }}
         priority
       />
 

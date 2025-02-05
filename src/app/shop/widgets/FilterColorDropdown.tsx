@@ -1,13 +1,18 @@
 "use client";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 interface FilterColorDropdownProps {
-  colors: string[];
+  HandleFilterColor: (color: string) => void;
 }
 
-const FilterColorDropdown: React.FC<FilterColorDropdownProps> = ({ colors }) => {
+const colors = ["red", "green", "blue", "yellow", "black", "white", "gray", "beige"];
+
+const FilterColorDropdown: React.FC<FilterColorDropdownProps> = ({ HandleFilterColor }) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
+  const searchParams = useSearchParams();
+  const FilterColor = searchParams.get("color") || "";
 
   return (
     <div className="flex flex-col w-[85%] gap-y-4 border-b-[1px] border-[#e5e5e5] pb-7 mt-5">
@@ -22,14 +27,16 @@ const FilterColorDropdown: React.FC<FilterColorDropdownProps> = ({ colors }) => 
 
       {/* Danh sách màu sắc */}
       {isOpen && (
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3 items-center px-4">
           {colors.map((color, index) => (
             <div
               key={index}
-              className="w-7 h-7 rounded-full cursor-pointer hover:opacity-50"
+              onClick={() =>
+                HandleFilterColor(color)
+              }
+              className={`${color == FilterColor ? "w-10 h-10" : "w-7 h-7"} border-[1px] border-[#e5e5e5] rounded-full cursor-pointer hover:opacity-50`}
               style={{
                 backgroundColor: color,
-                border: "1px solid #e5e5e5",
                 boxShadow: "0 0 0 4px rgba(229, 229, 229, 0.5)",
               }}
             ></div>

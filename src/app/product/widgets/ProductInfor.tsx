@@ -1,6 +1,7 @@
 "use client";
 import StarRating from "@/components/StartRating/StarRating";
 import { Product } from "@/types/Product";
+import { getImage } from "@/utils/getImage";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -140,7 +141,7 @@ export const ProductInfor = ({product} : {product: Product}) => {
       </div>
       <div className="center mt-3 w-full">
         <Image
-          src="/assets/payment/details-payment.png"
+          src={getImage("/assets/payment/details-payment.png")}
           alt=""
           width={476}
           height={26}

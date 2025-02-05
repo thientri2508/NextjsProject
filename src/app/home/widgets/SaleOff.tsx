@@ -1,4 +1,5 @@
 "use client";
+import { getImage } from "@/utils/getImage";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -46,7 +47,7 @@ export const SaleOff = () => {
         </div>
         <div className="relative flex-shrink-0">
           <Image
-            src="/assets/product/product-sale.png"
+            src={getImage("/assets/product/product-sale.png")}
             alt=""
             width={360}
             height={314}

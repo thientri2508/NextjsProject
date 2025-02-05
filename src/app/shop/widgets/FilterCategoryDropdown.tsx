@@ -1,20 +1,28 @@
 "use client";
+import { Category } from "@/types/Category";
+import { useSearchParams } from "next/navigation";
 import { useState, useRef, useLayoutEffect } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { RiCloseLine } from "react-icons/ri";
 
 interface FilterCategoryDropdownProps {
   categories: {
     category: string;
-    children: string[];
+    children: Category[];
   }[];
+  FilterCategory: (categoryId: string) => void;
 }
 
 const FilterCategoryDropdown: React.FC<FilterCategoryDropdownProps> = ({
   categories,
+  FilterCategory,
 }) => {
+  const searchParams = useSearchParams();
+  const categoryId = searchParams.get("category") || "";
   const [openCategories, setOpenCategories] = useState<string[]>(
     categories.map((cat) => cat.category)
   );
+
   const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   // Tính toán chiều cao cho mỗi danh mục con khi render xong
@@ -44,7 +52,7 @@ const FilterCategoryDropdown: React.FC<FilterCategoryDropdownProps> = ({
   };
 
   return (
-    <div className="w-[85%]">
+    <div className="w-[85%] flex flex-col gap-5">
       {categories.map((category, index) => (
         <div key={index} className="border-b-[1px] border-[#e5e5e5] pb-5">
           {/* Danh mục cha */}
@@ -76,9 +84,20 @@ const FilterCategoryDropdown: React.FC<FilterCategoryDropdownProps> = ({
               {category.children.map((subCategory, subIndex) => (
                 <div
                   key={subIndex}
-                  className="py-1 text-[#b7b7b7] capitalize hover:text-[#111] cursor-pointer"
+                  onClick={() => FilterCategory(subCategory.id.toString())}
+                  className={`py-1 relative capitalize hover:text-[#111] cursor-pointer ${
+                    subCategory.id.toString() == categoryId
+                      ? "bg-[#f3f2ee] text-[#111] font-medium"
+                      : "text-[#b7b7b7]"
+                  } px-4`}
                 >
-                  {subCategory}
+                  {subCategory.name}
+                  {subCategory.id.toString() == categoryId && (
+                    <RiCloseLine
+                      size={21}
+                      className="absolute right-3 top-[6px] font-medium"
+                    />
+                  )}
                 </div>
               ))}
             </div>

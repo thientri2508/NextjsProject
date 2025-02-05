@@ -1,3 +1,4 @@
+import { getImage } from "@/utils/getImage";
 import Image from "next/image";
 import { TfiEmail } from "react-icons/tfi";
 
@@ -7,7 +8,7 @@ export const Footer = () => {
       <div className="max-w-[450px] sm:max-w-[550px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1150px] gap-y-10 m-auto flex flex-wrap justify-between text-[15px] text-[#b7b7b7] py-[70px]">
         <div className="flex flex-col gap-y-4 w-[265px]">
           <Image
-            src="/assets/logo/footer-logo.png"
+            src={getImage("/assets/logo/footer-logo.png")}
             alt=""
             width={196}
             height={23}
@@ -18,7 +19,7 @@ export const Footer = () => {
             includes design.
           </div>
           <Image
-            src="/assets/payment/payment.png"
+            src={getImage("/assets/payment/payment.png")}
             alt=""
             width={218}
             height={23}

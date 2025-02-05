@@ -1,0 +1,1 @@
+export const product_page_size = 12

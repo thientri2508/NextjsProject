@@ -1,5 +1,6 @@
 "use client"
 import { useProductModal } from "@/context/ProductModalContext";
+import { getImage } from "@/utils/getImage";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { CgClose } from "react-icons/cg";
@@ -57,23 +58,23 @@ export const ModalAddToCart = () => {
             <CgClose size={30} />
           </button>
           <div className="flex flex-col sm:flex-row sm:justify-between gap-y-4 mt-8 items-center sm:items-start">
-            <div className="w-[70%] sm:w-[48%] md:w-[56%] flex justify-between">
-              <div className="w-[15%] flex flex-col gap-y-3 max-h-[383px]">
+            <div className="w-[70%] sm:w-[48%] md:w-[54%] flex justify-between">
+              <div className="w-[15%] flex flex-col gap-y-4 max-h-[383px]">
                 {product?.sub_image?.map((src, index) => (
                   <Image
                     key={index}
-                    src={src}
+                    src={getImage(src)}
                     alt={`sub-image-${index}`}
                     width={100}
                     height={120}
-                    className="cursor-pointer w-full hover:opacity-60 transition"
+                    className="cursor-pointer w-full transition-shadow duration-200 hover:shadow-xl"
                     onClick={() => setMainImage(src)}
                   />
                 ))}
               </div>
               <div className="w-[82%] center">
                 <Image
-                  src={mainImage || "/default-ProducImage.jpg"}
+                  src={getImage(mainImage) || "/default-ProducImage.jpg"}
                   alt="main-image"
                   width={453}
                   height={533}
@@ -81,7 +82,7 @@ export const ModalAddToCart = () => {
                 />
               </div>
             </div>
-            <div className="w-[70%] sm:w-[48%] md:w-[41%]">
+            <div className="w-[70%] sm:w-[48%] md:w-[43%]">
               <div className="text-[22px] font-semibold text-[#111] line-clamp-2 overflow-hidden text-ellipsis capitalize">
                 {product?.name.toLowerCase()}
               </div>
