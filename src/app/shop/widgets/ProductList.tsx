@@ -9,16 +9,11 @@ import { CardProductSkeleton } from "@/components/CardProduct/CardProductSkeleto
 import { useSearchParams } from "next/navigation";
 
 const ProductList = () => {
-  const [page, setPage] = useState(() => {
-    return parseInt(sessionStorage.getItem("currentPage") || "1", 10);
-  });
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem("currentPage", page.toString());
-      window.scrollTo({ top: 200, behavior: "smooth" });
-    }
-  }, [page]);  
+    window.scrollTo({ top: 200, behavior: "smooth" });
+  }, [page]);
 
   const searchParams = useSearchParams();
   const category = searchParams.get("category") || "";
@@ -31,7 +26,7 @@ const ProductList = () => {
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["products", category, price, color, page],
-    queryFn: () => getProductsByFilter({category, price, color, page}),
+    queryFn: () => getProductsByFilter({ category, price, color, page }),
   });
 
   if (isLoading) return <CardProductSkeleton />;
