@@ -14,9 +14,11 @@ const ProductList = () => {
   });
 
   useEffect(() => {
-    sessionStorage.setItem("currentPage", page.toString());
-    window.scrollTo({ top: 200, behavior: "smooth" });
-  }, [page]);
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("currentPage", page.toString());
+      window.scrollTo({ top: 200, behavior: "smooth" });
+    }
+  }, [page]);  
 
   const searchParams = useSearchParams();
   const category = searchParams.get("category") || "";
