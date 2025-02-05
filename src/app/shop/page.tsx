@@ -1,4 +1,5 @@
 import Breadcrumb from "./widgets/Breadcrumb";
+import { Suspense } from "react";
 import { ProductFilter } from "./widgets/ProductFilter";
 import {
   HydrationBoundary,
@@ -8,7 +9,6 @@ import {
 
 import ProductList from "./widgets/ProductList";
 import { getProductsByFilter } from "@/lib/product";
-import { Suspense } from "react";
 
 export default async function Page() {
   const queryClient = new QueryClient();
@@ -16,17 +16,20 @@ export default async function Page() {
   // Fetch dữ liệu trên server trước khi render
   await queryClient.prefetchQuery({
     queryKey: ["products", "", "", "", 1],
-    queryFn: () => getProductsByFilter({category: "", price: "", color: "", page: 1}),
+    queryFn: () =>
+      getProductsByFilter({ category: "", price: "", color: "", page: 1 }),
   });
   return (
     <div className="w-full">
       <Breadcrumb label="Shop" />
       <div className="max-w-[720px] lg:max-w-[900px] xl:max-w-[1170px] m-auto flex flex-col md:flex-row justify-between mt-[40px] md:mt-[90px]">
-        <ProductFilter />
+        <Suspense>
+          <ProductFilter />
+        </Suspense>
         <div className="w-[100%] md:w-[66%] lg:w-[74%]">
           <HydrationBoundary state={dehydrate(queryClient)}>
-          <Suspense fallback={<div>Loading...</div>}>
-            <ProductList />
+            <Suspense>
+              <ProductList />
             </Suspense>
           </HydrationBoundary>
         </div>

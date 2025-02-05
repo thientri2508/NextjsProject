@@ -3,10 +3,10 @@ import { categories } from "@/mockData/categoryData";
 import FilterCategoryDropdown from "./FilterCategoryDropdown";
 import FilterColorDropdown from "./FilterColorDropdown";
 import FilterPriceDropdown from "./FilterPriceDropdown";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { convertToTree } from "@/utils/convertToTree";
-import queryString from 'query-string';
+import queryString from "query-string";
 import { useSearchParams } from "next/navigation";
 
 export const ProductFilter = () => {
@@ -17,47 +17,50 @@ export const ProductFilter = () => {
   const searchParams = useSearchParams();
 
   // Hàm cập nhật URL bằng query-string
-  const updateUrl = (newCategoryId?: string, newPrice?: string, newColor?: string) => {
-
+  const updateUrl = (
+    newCategoryId?: string,
+    newPrice?: string,
+    newColor?: string
+  ) => {
     const newQuery = queryString.stringify({
-      ...(newCategoryId && { category: newCategoryId }),  // Thêm category nếu newCategoryId khác rỗng
-      ...(newPrice && { price: newPrice }),              // Thêm price nếu newPrice khác rỗng
-      ...(newColor && { color: newColor }),    
+      ...(newCategoryId && { category: newCategoryId }), // Thêm category nếu newCategoryId khác rỗng
+      ...(newPrice && { price: newPrice }), // Thêm price nếu newPrice khác rỗng
+      ...(newColor && { color: newColor }),
     });
 
     // Cập nhật URL mà không reload trang
-    window.history.pushState(null, '', `/shop?${newQuery}`);
+    window.history.pushState(null, "", `/shop?${newQuery}`);
   };
 
   const FilterCategory = (categoryId: string) => {
     if (category === categoryId) {
       // Nếu chọn lại category đã có, loại bỏ category khỏi URL
       updateUrl(undefined, price, color);
-      setCategory("")
+      setCategory("");
     } else {
       // Nếu chọn một category mới, cập nhật URL với category mới
       updateUrl(categoryId, price, color);
-      setCategory(categoryId)
+      setCategory(categoryId);
     }
   };
 
   const HandleFilterPrice = (filterPrice: string) => {
     if (price === filterPrice) {
       updateUrl(category, undefined, color);
-      setPrice("")
+      setPrice("");
     } else {
       updateUrl(category, filterPrice, color);
-      setPrice(filterPrice)
+      setPrice(filterPrice);
     }
   };
 
   const HandleFilterColor = (filterColor: string) => {
     if (color === filterColor) {
       updateUrl(category, price, undefined);
-      setColor("")
+      setColor("");
     } else {
       updateUrl(category, price, filterColor);
-      setColor(filterColor)
+      setColor(filterColor);
     }
   };
 
@@ -96,9 +99,14 @@ export const ProductFilter = () => {
           openFilter ? "h-[500px] overflow-auto" : "h-0 overflow-hidden"
         } md:h-[1680px] transition-all duration-200 flex flex-col items-center md:items-start`}
       >
-        <FilterCategoryDropdown categories={convertToTree(categories)} FilterCategory={FilterCategory} />
-        <FilterPriceDropdown HandleFilterPrice={HandleFilterPrice} />
-        <FilterColorDropdown HandleFilterColor={HandleFilterColor} />
+        <Suspense>
+          <FilterCategoryDropdown
+            categories={convertToTree(categories)}
+            FilterCategory={FilterCategory}
+          />
+          <FilterPriceDropdown HandleFilterPrice={HandleFilterPrice} />
+          <FilterColorDropdown HandleFilterColor={HandleFilterColor} />
+        </Suspense>
       </div>
     </>
   );
