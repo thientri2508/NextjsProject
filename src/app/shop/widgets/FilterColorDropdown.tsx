@@ -7,9 +7,20 @@ interface FilterColorDropdownProps {
   HandleFilterColor: (color: string) => void;
 }
 
-const colors = ["red", "green", "blue", "yellow", "black", "white", "gray", "beige"];
+const colors = [
+  "red",
+  "green",
+  "blue",
+  "yellow",
+  "black",
+  "white",
+  "gray",
+  "beige",
+];
 
-const FilterColorDropdown: React.FC<FilterColorDropdownProps> = ({ HandleFilterColor }) => {
+const FilterColorDropdown: React.FC<FilterColorDropdownProps> = ({
+  HandleFilterColor,
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const searchParams = useSearchParams();
   const FilterColor = searchParams.get("color") || "";
@@ -29,17 +40,16 @@ const FilterColorDropdown: React.FC<FilterColorDropdownProps> = ({ HandleFilterC
       {isOpen && (
         <div className="flex flex-wrap gap-3 items-center px-4">
           {colors.map((color, index) => (
-            <div
-              key={index}
-              onClick={() =>
-                HandleFilterColor(color)
-              }
-              className={`${color == FilterColor ? "w-10 h-10" : "w-7 h-7"} border-[1px] border-[#e5e5e5] rounded-full cursor-pointer hover:opacity-50`}
-              style={{
-                backgroundColor: color,
-                boxShadow: "0 0 0 4px rgba(229, 229, 229, 0.5)",
-              }}
-            ></div>
+            <div key={index} className={`${FilterColor == color ? 'border-2 border-black rounded-full p-1' : ''}`}>
+              <div
+                onClick={() => HandleFilterColor(color)}
+                className={`w-7 h-7 border-2 border-[#e5e5e5] rounded-full cursor-pointer hover:opacity-50`}
+                style={{
+                  backgroundColor: color,
+                  boxShadow: "0 0 0 4px rgba(229, 229, 229, 0.5)",
+                }}
+              ></div>
+            </div>
           ))}
         </div>
       )}

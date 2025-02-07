@@ -9,16 +9,16 @@ import { CardProductSkeleton } from "@/components/CardProduct/CardProductSkeleto
 import { useSearchParams } from "next/navigation";
 
 const ProductList = () => {
-  const [page, setPage] = useState(1);
-
-  useEffect(() => {
-    window.scrollTo({ top: 200, behavior: "smooth" });
-  }, [page]);
-
   const searchParams = useSearchParams();
   const category = searchParams.get("category") || "";
   const price = searchParams.get("price") || "";
   const color = searchParams.get("color") || "";
+  const initialPage = parseInt(searchParams.get("page") || "1", 10);
+  const [page, setPage] = useState(initialPage);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [page]);
 
   const handlePageChange = (newPage: number) => {
     setPage(newPage);

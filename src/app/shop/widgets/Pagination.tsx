@@ -1,5 +1,6 @@
 import { product_page_size } from "@/constants/constants.pageSize";
 import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 interface PaginationProps {
   page: number;
@@ -12,8 +13,18 @@ const Pagination: React.FC<PaginationProps> = ({
   total,
   onPageChange,
 }) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const totalPages = Math.ceil(total / product_page_size);
   const [currentPage, setCurrentPage] = useState(page);
+
+  // const handleChangePage = (page: number) => {
+  //   const params = new URLSearchParams(searchParams.toString());
+
+  //   params.set("page", page.toString()); // Cập nhật hoặc thêm query 'page'
+
+  //   router.push(`?${params.toString()}`); // Cập nhật URL mà vẫn giữ query cũ
+  // };
 
   // Tính các trang cần hiển thị
   const getPageNumbers = (currentPage: number) => {
@@ -47,6 +58,9 @@ const Pagination: React.FC<PaginationProps> = ({
 
   const handlePageChange = (newPage: number) => {
     if (newPage < 1 || newPage > totalPages) return;
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("page", newPage.toString()); // Cập nhật hoặc thêm query 'page'
+    router.push(`?${params.toString()}`); // Cập nhật URL mà vẫn giữ query cũ
     setCurrentPage(newPage);
     onPageChange(newPage);
   };
