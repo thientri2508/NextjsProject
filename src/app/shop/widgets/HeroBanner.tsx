@@ -20,7 +20,7 @@ const HeroBanner = () => {
             Urban Style, Unmatched Comfort
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8">
-            Latest Trends in Men's Casual Wear
+            Latest Trends in Men Casual Wear
           </p>
         </div>
       </div>

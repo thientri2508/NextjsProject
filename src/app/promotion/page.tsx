@@ -16,7 +16,7 @@ export default function Page() {
         /> 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-            Exclusive Men's Collection
+            Exclusive Men Collection
           </h1>
           <p className="text-xl text-gray-200 mb-8 max-w-2xl">
             Discover amazing deals on premium menswear and accessories
