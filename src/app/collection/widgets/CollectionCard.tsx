@@ -1,4 +1,5 @@
 import { Collection } from "@/types/Collection";
+import { getImage } from "@/utils/getImage";
 import Image from "next/image";
 import { FaChevronRight } from "react-icons/fa";
 
@@ -6,7 +7,7 @@ export const CollectionCard = ({ collection } : {collection: Collection}) => (
     <div className="group relative overflow-hidden rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="aspect-[3/5] relative bg-black">
         <Image
-          src={collection.image}
+          src={getImage(collection.image)}
           alt={collection.name}
           width={200}
           height={200}

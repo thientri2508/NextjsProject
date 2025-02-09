@@ -4,6 +4,7 @@ import { CountdownTimer } from "./CountdownTimer";
 import { useState } from "react";
 import Image from "next/image";
 import { Promotion } from "@/types/Promotion";
+import { getImage } from "@/utils/getImage";
 
 export const PromotionCard = ({ promotion }: {promotion: Promotion}) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -12,7 +13,7 @@ export const PromotionCard = ({ promotion }: {promotion: Promotion}) => {
       <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
         <div className="relative">
           <Image
-            src={promotion.image}
+            src={getImage(promotion.image)}
             alt={promotion.title}
             width={200}
             height={200}

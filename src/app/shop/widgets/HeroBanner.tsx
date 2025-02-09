@@ -1,3 +1,4 @@
+import { getImage } from "@/utils/getImage";
 import Image from "next/image";
 
 const HeroBanner = () => {
@@ -6,7 +7,7 @@ const HeroBanner = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
 
       <Image
-        src="/assets/banner/banner-shop.jpg"
+        src={getImage("/assets/banner/banner-shop.jpg")}
         alt="Young man in urban setting wearing trendy casual wear"
         width={200}
         height={200}

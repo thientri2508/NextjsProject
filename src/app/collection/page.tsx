@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CollectionCard } from "./widgets/CollectionCard";
 import { collectionData } from "@/mockData/collectionData";
+import { getImage } from "@/utils/getImage";
 
 export default function Page() {
   return (
@@ -8,7 +9,7 @@ export default function Page() {
       {/* Hero Section */}
       <div className="relative h-[60vh] overflow-hidden">
         <Image
-          src="/assets/banner/banner-collection.jpg"
+          src={getImage("/assets/banner/banner-collection.jpg")}
           alt="Hero Collection"
           width={200}
           height={200}

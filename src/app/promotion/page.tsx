@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { PromotionCard } from "./widgets/PromotionCard";
 import { promotionsData } from "@/mockData/promotionData";
+import { getImage } from "@/utils/getImage";
 
 export default function Page() {
   return (
@@ -8,7 +9,7 @@ export default function Page() {
       {/* Hero Banner */}
       <div className="relative h-[60vh] bg-gray-900">
         <Image
-          src="/assets/banner/banner-promotion.jpg"
+          src={getImage("/assets/banner/banner-promotion.jpg")}
           alt="Men's Fashion Hero"
           width={200}
           height={200}
