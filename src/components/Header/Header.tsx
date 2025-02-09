@@ -8,14 +8,27 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getImage } from "@/utils/getImage";
+import { useCart } from "@/context/CartProvider";
 
-const categories = ["Shop", "Collection", "Promotion", "Blog", "Contacts"];
+const categories = [
+  { name: "Shop", path: "/shop" },
+  { name: "Collection", path: "/collection" },
+  { name: "Promotion", path: "/promotion" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contacts", path: "/contacts" },
+];
 
 const Header = () => {
   const pathname = usePathname();
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
-  
+  const { cart } = useCart();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   useEffect(() => {
     setIsOpenMenu(false);
   }, [pathname]);
@@ -37,12 +50,12 @@ const Header = () => {
         </div>
         <ul className="hidden md:flex gap-5 lg:gap-10 text-[17px] font-semibold">
           {categories.map((category, index) => (
-            <Link href={`/${category.toLowerCase()}`} key={index}>
+            <Link href={category.path} key={index}>
               <li className="cursor-pointer transition-colors relative group inline-block pb-1">
                 <span className="transition-all duration-300 ease-in-out">
-                  {category}
+                  {category.name}
                 </span>
-                <span className="absolute left-0 bottom-0 block h-0.5 w-0 bg-[#e53637] group-hover:w-full transition-all duration-300 ease-in-out"></span>
+                <span className={`absolute left-0 bottom-0 block h-0.5 bg-[#e53637] ${pathname === category.path ? 'w-full' : 'w-0 group-hover:w-full'} transition-all duration-300 ease-in-out`}></span>
               </li>
             </Link>
           ))}
@@ -80,10 +93,11 @@ const Header = () => {
           <Link
             href="/cart"
             className="relative cursor-pointer w-[50px] hidden md:block"
+            id="cart-icon"
           >
             <MdOutlineShoppingBag size={28} />
             <div className="absolute z-10 w-[30px] h-[20px] text-[10px] text-[#FFF] rounded-[20px] bg-[#e53637] right-0 top-[-10px] flex items-center justify-center">
-              <span>0</span>
+              {isMounted ? (<span>{cart.length ?? "0"}</span>) : (<span>0</span>)}
             </div>
           </Link>
         </div>
@@ -141,10 +155,10 @@ const Header = () => {
 
             <ul className="flex flex-col gap-y-5 text-[17px] font-semibold mt-3 ml-3 w-[87%]">
               {categories.map((category, index) => (
-                <Link href={`/${category.toLowerCase()}`} key={index}>
+                <Link href={category.path} key={index}>
                   <li className="cursor-pointer transition-colors relative group inline-block pb-1 w-[100%]">
                     <span className="transition-all duration-300 ease-in-out">
-                      {category}
+                      {category.name}
                     </span>
                     <span className="absolute left-0 bottom-0 block h-0.5 w-0 bg-[#e53637] group-hover:w-full transition-all duration-300 ease-in-out"></span>
                   </li>

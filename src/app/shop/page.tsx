@@ -1,4 +1,3 @@
-import Breadcrumb from "./widgets/Breadcrumb";
 import { Suspense } from "react";
 import { ProductFilter } from "./widgets/ProductFilter";
 import {
@@ -9,6 +8,7 @@ import {
 
 import ProductList from "./widgets/ProductList";
 import { getProductsByFilter } from "@/lib/product";
+import HeroBanner from "./widgets/HeroBanner";
 
 export default async function Page() {
   const queryClient = new QueryClient();
@@ -21,7 +21,7 @@ export default async function Page() {
   });
   return (
     <div className="w-full">
-      <Breadcrumb label="Shop" />
+      <HeroBanner />
       <div className="max-w-[720px] lg:max-w-[900px] xl:max-w-[1170px] m-auto flex flex-col md:flex-row justify-between mt-[40px] md:mt-[90px]">
         <Suspense>
           <ProductFilter />

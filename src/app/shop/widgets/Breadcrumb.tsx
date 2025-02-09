@@ -6,7 +6,7 @@ interface BreadcrumbProps {
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ label }) => {
   return (
-    <div className="w-full bg-[#f3f2ee] h-[140px] capitalize">
+    <div className="w-full bg-[#f3f2ee] h-[120px] capitalize">
       <nav
         className="max-w-[100%] md:max-w-[730px] lg:max-w-[900px] xl:max-w-[1170px] pl-9 md:pl-0 h-full m-auto flex flex-col justify-center"
         aria-label="breadcrumb"

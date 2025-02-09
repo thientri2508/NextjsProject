@@ -5,8 +5,10 @@ import TopBar from "@/components/TopBar/TopBar";
 import { Footer } from "@/components/Footer/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton/ScrollToTopButton";
 import { ProductModalProvider } from "@/context/ProductModalContext";
-import { ModalAddToCart } from "@/components/ModalAddToCart/ModalAddToCart";
+import { ModalUpdateItemCart } from "@/components/ModalUpdateItemCart/ModalUpdateItemCart";
 import ReactQueryProvider from "./providers/QueryClientProvider";
+import { CartProvider } from "@/context/CartProvider";
+import { ConfirmModalProvider } from "@/context/ConfirmModalContext";
 
 export const metadata = {
   title: "Male Fashion",
@@ -22,16 +24,20 @@ export default function DashboardLayout({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body suppressHydrationWarning>
-        <ProductModalProvider>
-          <TopBar />
-          <Header />
-          <ModalAddToCart />
-          <ScrollToTopButton />
-          <main>
-            <ReactQueryProvider>{children}</ReactQueryProvider>
-          </main>
-          <Footer />
-        </ProductModalProvider>
+        <CartProvider>
+          <ProductModalProvider>
+            <ConfirmModalProvider>
+              <TopBar />
+              <Header />
+              <ModalUpdateItemCart />
+              <ScrollToTopButton />
+              <main>
+                <ReactQueryProvider>{children}</ReactQueryProvider>
+              </main>
+              <Footer />
+            </ConfirmModalProvider>
+          </ProductModalProvider>
+        </CartProvider>
       </body>
     </html>
   );

@@ -14,6 +14,9 @@
 	.center{
 		@apply flex justify-center items-center;
 	}
+	.label-inp {
+		@apply absolute left-4 top-[-1px] transform text-black -translate-y-1/2 text-[14px] transition-all duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-black peer-placeholder-shown:-translate-y-1/2 peer-focus:top-[-1px] bg-white px-[6px] cursor-text;
+	}
 }
 input[type="search"]::-webkit-search-cancel-button {
 	-webkit-appearance: none;

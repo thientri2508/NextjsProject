@@ -19,7 +19,7 @@ export const productsData = [
         price: 43.48,
         rating: 4.5,
         sizes: ["S","M","L","XL","XXL"],
-        colors: ["white", "black", "blue"],
+        colors: ["black", "white", "blue"],
         category: "T-Shirt",
         id_category: 2,
     },
