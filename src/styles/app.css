@@ -11,6 +11,9 @@
 	.btn-shopNow {
 		@apply text-[13px] tracking-[4px] font-semibold absolute cursor-pointer overflow-visible whitespace-nowrap w-[45px] hover:w-[100px] pb-1 border-b-2 border-black hover:border-[#e53637] transition-all duration-200 ease-in-out;
 	}
+	.btn-shopNow-Mobi {
+		@apply text-[13px] tracking-[4px] font-semibold cursor-pointer overflow-visible whitespace-nowrap w-[45px] hover:w-[100px] pb-1 border-b-2 border-black hover:border-[#e53637] transition-all duration-200 ease-in-out sm:hidden;
+	}
 	.center{
 		@apply flex justify-center items-center;
 	}

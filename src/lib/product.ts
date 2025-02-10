@@ -1,6 +1,7 @@
 import { product_page_size } from "@/constants/constants.pageSize";
 import { productsData } from "@/mockData/productData";
 import { ProductResponse } from "@/types/Product";
+import { sanitizeInput } from "@/utils/validationInput";
 
 export const getProductById = (id: string) => {
     const product = productsData.find((p) => p.id.toString() === id);
@@ -61,4 +62,11 @@ export const getProductsByFilter = ({ category, price, color, page }: { category
       });
     }, 500);
   });
+};
+
+export const getProductbyName = (search: string) => {
+  const sanitizedSearch = sanitizeInput(search.toLowerCase());
+  return productsData.filter(product => 
+    product.name.toLowerCase().includes(sanitizedSearch)
+  );
 };

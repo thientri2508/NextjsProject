@@ -30,14 +30,14 @@ export const CardProduct: React.FC<CardProductProps> = ({
     widthConfig === "carousel"
       ? "w-full"
       : widthConfig === "home"
-      ? "w-[calc(50%-12px)] md:w-[calc(33.33%-12px)] lg:w-[calc(25%-12px)]"
+      ? "w-[calc(50%-20px)] md:w-[calc(33.33%-20px)] lg:w-[calc(25%-20px)]"
       : widthConfig === "productlist"
       ? "w-[calc(50%-20px)] md:w-[calc(50%-20px)] lg:w-[calc(33.33%-20px)]"
       : "";
 
   return (
     <div
-      className={`${widthClasses} flex flex-col relative cursor-pointer group overflow-hidden`}
+      className={`${widthClasses} flex flex-col relative cursor-pointer group overflow-hidden ml-[20px]`}
     >
       <div className="w-[36px] h-[36px] center bg-white shadow-custom-shadow hover:rounded-2xl absolute z-20 top-5 right-[-36px] group-hover:right-5 transition-all duration-300">
         <IoMdHeartEmpty size={20} />

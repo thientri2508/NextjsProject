@@ -28,7 +28,7 @@ export const Banner = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[900px] overflow-hidden">
+    <div className="relative w-full h-[500px] md:h-[700px] lg:h-[900px] overflow-hidden">
       {/* Ảnh nền hiện tại */}
       <motion.div
         key={currentIndex}
@@ -66,13 +66,13 @@ export const Banner = () => {
       </motion.div>
 
       {/* Nội dung trên ảnh */}
-      <div className="absolute inset-0 flex flex-col justify-center pt-[230px]">
+      <div className="absolute inset-0 flex flex-col justify-center pt-[50px] md:pt-[160px] lg:pt-[230px]">
         <div className="w-[1170px] max-w-[85%] m-auto">
           <div className="text-[#e53637] font-semibold tracking-widest">SUMMER COLLECTION</div>
-          <div className="text-[48px] w-[400px] lg:w-[500px] font-bold my-4 leading-tight">
+          <div className="text-[30px] md:text-[48px] w-[270px] sm:w-[300px] md:w-[400px] lg:w-[500px] font-bold my-4 leading-tight">
             Fall - Winter Collections 2024
           </div>
-          <p className="mt-10 w-[400px] lg:w-[500px]">
+          <p className="mt-4 md:mt-10 w-[260px] sm:w-[300px] md:w-[400px] lg:w-[500px]">
             A specialist label creating luxury essentials. Ethically crafted with an unwavering commitment to exceptional quality.
           </p>
           <Link href='/shop'>
@@ -80,7 +80,7 @@ export const Banner = () => {
           </Link>
 
           {/* Icon mạng xã hội */}
-          <ul className="flex mt-[200px] lg:mt-[285px] gap-10 items-center *:cursor-pointer">
+          <ul className="flex mt-[70px] lg:mt-[285px] gap-10 items-center *:cursor-pointer">
             <li><Image src={getImage("/assets/icon/icon-fb.png")} alt="Facebook" width={24} height={24} /></li>
             <li><Image src={getImage("/assets/icon/icon-twitter.png")} alt="Twitter" width={24} height={24} /></li>
             <li><Image src={getImage("/assets/icon/icon-pinterest.png")} alt="Pinterest" width={24} height={24} /></li>

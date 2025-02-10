@@ -34,7 +34,7 @@ const ProductList = () => {
 
   return (
     <div className="w-full">
-      <div className="flex gap-x-2 md:gap-x-[20px] gap-y-10 flex-wrap justify-center lg:justify-normal mt-14 md:mt-0">
+      <div className="flex ml-[-20px] gap-y-10 flex-wrap mt-10 md:mt-0 px-3 md:px-0">
         {data?.list.map((product: Product) => (
           <CardProduct
             product={product}
