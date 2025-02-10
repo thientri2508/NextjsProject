@@ -16,6 +16,11 @@ export const CardProduct: React.FC<CardProductProps> = ({
   product,
   widthConfig,
 }) => {
+  const [isLoadingImage, setIsLoadingImage] = useState(true);
+
+  const handleImageLoad = () => {
+    setIsLoadingImage(false);
+  };
   const images = product.sub_image?.length
     ? product.sub_image
     : ["/default-image.jpg"];
@@ -45,11 +50,14 @@ export const CardProduct: React.FC<CardProductProps> = ({
           <Image
             src={getImage(currentImage)}
             alt=""
+            onLoad={handleImageLoad}
             width={270}
             height={270}
             className={`${
               widthConfig == "carousel" ? "" : "w-full"
-            } aspect-square object-cover`}
+            } aspect-square object-cover transition-all ${
+            isLoadingImage ? "blur-sm" : ""
+          }`}
           ></Image>
         </div>
         <div className="mt-[18px] mb-[8px] line-clamp-2 overflow-hidden text-ellipsis capitalize">
