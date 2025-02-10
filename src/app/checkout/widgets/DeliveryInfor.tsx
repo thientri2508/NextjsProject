@@ -25,60 +25,66 @@ export const DeliveryInfor = () => {
         <div className="relative w-full">
           <input
             type="text"
+            id="fullname"
             placeholder=" "
             className="outline-none border-solid border-2 px-4 py-2 w-[100%] lg:w-[80%] transition-all peer"
           />
-          <label htmlFor="username" className="label-inp">
+          <label htmlFor="fullname" className="label-inp">
             Full name
           </label>
         </div>
         <div className="relative w-full">
           <input
             type="text"
+            id="phone"
             placeholder=" "
             className="outline-none border-solid border-2 px-4 py-2 w-[100%] lg:w-[80%] transition-all peer"
           />
-          <label htmlFor="username" className="label-inp">
+          <label htmlFor="phone" className="label-inp">
             Phone number
           </label>
         </div>
         <div className="relative w-full">
           <input
             type="email"
+            id="email"
             placeholder=" "
             className="outline-none border-solid border-2 px-4 py-2 w-[100%] lg:w-[80%] transition-all peer"
           />
-          <label htmlFor="username" className="label-inp">
+          <label htmlFor="email" className="label-inp">
             Email
           </label>
         </div>
         <div className="relative w-full">
           <input
             type="text"
+            id="address"
             placeholder=" "
             className="outline-none border-solid border-2 px-4 py-2 w-[100%] lg:w-[80%] transition-all peer"
           />
-          <label htmlFor="username" className="label-inp">
+          <label htmlFor="address" className="label-inp">
             Address
           </label>
         </div>
         <div className="relative w-full">
           <input
             type="text"
+            id="city"
             placeholder=" "
             className="outline-none border-solid border-2 px-4 py-2 w-[100%] lg:w-[80%] transition-all peer"
           />
-          <label htmlFor="username" className="label-inp">
+          <label htmlFor="city" className="label-inp">
             Town/City
           </label>
         </div>
         <div className="relative w-full">
           <input
             type="text"
+            id="country"
             placeholder=" "
             className="outline-none border-solid border-2 px-4 py-2 w-[100%] lg:w-[80%] transition-all peer"
           />
-          <label htmlFor="username" className="label-inp">
+          <label htmlFor="country" className="label-inp">
             Country/State
           </label>
         </div>

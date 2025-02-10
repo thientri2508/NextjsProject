@@ -72,7 +72,7 @@ export default function Page() {
                 </div>
               </div>
               <div className="bg-[#f3f2ee] px-6 py-4 flex flex-col gap-y-5 mt-14">
-                <div>CART TOTAL</div>
+                <div className="font-semibold">CART TOTAL</div>
                 <div className="flex justify-between">
                   <div>Subtotal</div>
                   <div className="text-[#e53637] font-semibold">$ {getTotalPrice()}</div>

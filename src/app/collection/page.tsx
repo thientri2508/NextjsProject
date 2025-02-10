@@ -10,10 +10,11 @@ export default function Page() {
       <div className="relative h-[60vh] overflow-hidden">
         <Image
           src={getImage("/assets/banner/banner-collection.jpg")}
-          alt="Hero Collection"
+          alt="Banner Collection"
           width={200}
           height={200}
           className="h-full w-full object-cover"
+          priority
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">

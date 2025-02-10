@@ -52,7 +52,7 @@ const Header = () => {
           {categories.map((category, index) => (
             <Link href={category.path} key={index}>
               <li className="cursor-pointer transition-colors relative group inline-block pb-1">
-                <span className="transition-all duration-300 ease-in-out">
+                <span className="transition-all duration-300 ease-in-out text-[15px]">
                   {category.name}
                 </span>
                 <span className={`absolute left-0 bottom-0 block h-0.5 bg-[#e53637] ${pathname === category.path ? 'w-full' : 'w-0 group-hover:w-full'} transition-all duration-300 ease-in-out`}></span>
@@ -92,11 +92,11 @@ const Header = () => {
 
           <Link
             href="/cart"
-            className="relative cursor-pointer w-[50px] hidden md:block"
+            className="relative cursor-pointer w-[50px] hidden md:block group perspective-1000"
             id="cart-icon"
           >
-            <MdOutlineShoppingBag size={28} />
-            <div className="absolute z-10 w-[30px] h-[20px] text-[10px] text-[#FFF] rounded-[20px] bg-[#e53637] right-0 top-[-10px] flex items-center justify-center">
+            <MdOutlineShoppingBag size={28} className="flip-effect" />
+            <div className="absolute z-10 w-[28px] h-[20px] text-[10px] text-[#FFF] rounded-[20px] bg-[#e53637] right-[3px] top-[-10px] flex items-center justify-center">
               {isMounted ? (<span>{cart.length ?? "0"}</span>) : (<span>0</span>)}
             </div>
           </Link>

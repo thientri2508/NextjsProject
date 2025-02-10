@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Montserrat"', 'sans-serif'],
+      },
       screens: {
         'sm': '580px',
         'tb': '1150px',

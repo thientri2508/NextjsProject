@@ -78,7 +78,7 @@ const Home = () => {
             Fashion New Trends
           </div>
           <div className="flex flex-wrap w-full gap-7 mt-5 justify-center">
-            {blogData.map((blog: Blog) => (
+            {blogData.slice(0, 3).map((blog: Blog) => (
               <CardBlog blog={blog} key={blog.id} />
             ))}
           </div>

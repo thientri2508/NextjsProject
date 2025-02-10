@@ -12,7 +12,7 @@ const HeroBanner = () => {
         width={200}
         height={200}
         className={`w-full h-full object-cover transition-opacity duration-500`}
-        loading="lazy"
+        priority
       />
 
       <div className="absolute inset-0 z-20 flex flex-col justify-center px-6 sm:px-12 lg:px-[170px]">
