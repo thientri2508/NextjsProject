@@ -42,8 +42,8 @@ export default async function ProductDetail({
           <ProductCarousel />
         </FadeInUp>
 
-        <div className="flex xl:hidden gap-x-[12px] gap-y-10 flex-wrap mt-10">
-          {productsData.map((product: Product) => (
+        <div className="flex xl:hidden ml-[-20px] gap-y-10 px-3 flex-wrap mt-10">
+          {productsData.slice(0, 8).map((product: Product) => (
             <CardProduct
               product={product}
               key={product.id}
