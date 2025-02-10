@@ -1,20 +1,27 @@
 "use client";
 
 import CustomCheckbox from "@/components/CustomHTML/CustomCheckbox";
+import CustomRadio from "@/components/CustomHTML/CustomRadio";
 import { useState } from "react";
 
 export const DeliveryInfor = () => {
-  const paymentMenthods = [
-    "Pay directly upon delivery",
-    "Pay by International Card / Domestic Card / QR Code",
+  const paymentMethods = ["Pay directly upon delivery", "Pay by QR Code"];
+  const subPaymentMethods = [
+    { name: "VNPay", image: "/assets/payment/vnpay.png" },
+    { name: "ZaloPay", image: "/assets/payment/zalopay.png" },
+    { name: "MoMo", image: "/assets/payment/momo.png" },
   ];
-  const deliveryMenthods = ["Standard speed (from 2 - 5 working days)"];
-  const [selectedPaymentMenthods, setSelectedPaymentMenthods] = useState<number | null>(
-    paymentMenthods.length === 1 ? 0 : null
-  );
-  const [selectedDeliveryMenthods, setSelectedDeliveryMenthods] = useState<number | null>(
-    deliveryMenthods.length === 1 ? 0 : null
-  );
+
+  const deliveryMethods = ["Standard speed (from 2 - 5 working days)"];
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<
+    number | null
+  >(paymentMethods.length === 1 ? 0 : null);
+  const [selectedSubPaymentMethod, setSelectedSubPaymentMethod] = useState<
+    number | null
+  >(null);
+  const [selectedDeliveryMethod, setSelectedDeliveryMethod] = useState<
+    number | null
+  >(deliveryMethods.length === 1 ? 0 : null);
 
   return (
     <div>
@@ -94,12 +101,12 @@ export const DeliveryInfor = () => {
         DELIVERY METHOD
       </div>
       <div className="flex justify-between flex-wrap items-center pr-3">
-        {deliveryMenthods.map((label, index) => (
+        {deliveryMethods.map((label, index) => (
           <CustomCheckbox
             key={index}
             label={label}
-            checked={selectedDeliveryMenthods === index}
-            onChange={() => setSelectedDeliveryMenthods(index)}
+            checked={selectedDeliveryMethod === index}
+            onChange={() => setSelectedDeliveryMethod(index)}
           />
         ))}
         <div className="text-[18px] font-bold mt-7">0 $</div>
@@ -108,14 +115,33 @@ export const DeliveryInfor = () => {
       <div className="font-bold bg-[#f3f2ee] pl-5 py-2 text-[20px] mt-7">
         PAYMENT METHODS
       </div>
-      {paymentMenthods.map((label, index) => (
+      {paymentMethods.map((label, index) => (
         <CustomCheckbox
           key={index}
           label={label}
-          checked={selectedPaymentMenthods === index}
-          onChange={() => setSelectedPaymentMenthods(index)}
+          checked={selectedPaymentMethod === index}
+          onChange={() => {
+            setSelectedPaymentMethod(index);
+            if (index !== 1) {
+              setSelectedSubPaymentMethod(null); // Reset nếu không phải QR Code
+            }
+          }}
         />
       ))}
+
+      {selectedPaymentMethod === 1 && (
+        <div className="ml-6 mt-3">
+          {subPaymentMethods.map((label, index) => (
+            <CustomRadio
+              key={index}
+              label={label.name}
+              imageSrc={label.image}
+              checked={selectedSubPaymentMethod === index}
+              onChange={() => setSelectedSubPaymentMethod(index)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

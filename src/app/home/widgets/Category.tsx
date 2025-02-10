@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const Category = () => {
   return (
-    <div className="mt-28 flex flex-col flex-wrap items-center justify-center">
+    <div className="mt-28 flex flex-col flex-wrap items-center justify-center px-4 sm:px-0">
       <div className="h-[550px] lg:h-[440px] relative lg:scale-85 lg:ml-[350px] xl:scale-100 xl:ml-[450px]">
         <Image src={getImage("/assets/banner/banner2.jpg")} alt="" width={440} height={440}></Image>
         <div className="font-semibold text-[24px] sm:text-[32px] w-full lg:w-[300px] absolute top-[455px] lg:top-28 lg:left-[-180px] xl:left-[-210px]">

@@ -80,7 +80,7 @@ export const Banner = () => {
           </Link>
 
           {/* Icon mạng xã hội */}
-          <ul className="flex mt-[270px] lg:mt-[285px] gap-10 items-center *:cursor-pointer">
+          <ul className="flex mt-[200px] lg:mt-[285px] gap-10 items-center *:cursor-pointer">
             <li><Image src={getImage("/assets/icon/icon-fb.png")} alt="Facebook" width={24} height={24} /></li>
             <li><Image src={getImage("/assets/icon/icon-twitter.png")} alt="Twitter" width={24} height={24} /></li>
             <li><Image src={getImage("/assets/icon/icon-pinterest.png")} alt="Pinterest" width={24} height={24} /></li>

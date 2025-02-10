@@ -43,7 +43,7 @@ export const ProductCarousel = () => {
         navigation={{ prevEl: `#btnLeft-product`, nextEl: `#btnRight-product` }}
       >
         {
-          productsData.map((product: Product) => (
+          productsData.slice(0, 8).map((product: Product) => (
             <SwiperSlide key={product.id}>
               <CardProduct product={product} widthConfig="carousel" />
             </SwiperSlide>

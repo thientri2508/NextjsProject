@@ -35,8 +35,8 @@ const Home = () => {
           <ProductCarousel />
         </FadeInUp>
 
-        <div className="flex xl:hidden gap-x-[12px] gap-y-10 flex-wrap mt-10">
-          {productsData.map((product: Product) => (
+        <div className="flex xl:hidden gap-x-[12px] gap-y-10 justify-center px-2 md:px-0 flex-wrap mt-10">
+          {productsData.slice(0, 8).map((product: Product) => (
             <CardProduct
               product={product}
               key={product.id}
