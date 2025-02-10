@@ -57,7 +57,7 @@ const Home = () => {
             />
           ))}
         </div>
-        <div className="flex flex-col gap-10 w-[300px] sm:w-[400px] md:w-[720px] lg:w-[280px] xl:w-[360px]">
+        <div className="flex flex-col gap-10 w-[340px] sm:w-[400px] md:w-[720px] lg:w-[280px] xl:w-[360px]">
           <div className="font-semibold text-[36px]">Instagram</div>
           <div className="text-[15px] text-[#3d3d3d]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
