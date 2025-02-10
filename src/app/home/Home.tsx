@@ -47,7 +47,7 @@ const Home = () => {
       </div>
       <SaleOff />
       <div className="max-w-[1150px] m-auto mt-24 flex flex-col lg:flex-row gap-16 lg:gap-0 xl:gap-10 justify-center items-center">
-        <div className="w-[440px] md:w-[750px] flex flex-wrap *:w-1/2 md:*:w-1/3 lg:scale-85 xl:scale-100">
+        <div className="w-[340px] sm:w-[540px] md:w-[750px] flex flex-wrap *:w-1/2 md:*:w-1/3 lg:scale-85 xl:scale-100">
           {images.map((src, index) => (
             <FadeInImage
               key={index}
@@ -57,7 +57,7 @@ const Home = () => {
             />
           ))}
         </div>
-        <div className="flex flex-col gap-10 w-[400px] md:w-[720px] lg:w-[280px] xl:w-[360px] ml-[-30px] xl:ml-0">
+        <div className="flex flex-col gap-10 w-[300px] sm:w-[400px] md:w-[720px] lg:w-[280px] xl:w-[360px]">
           <div className="font-semibold text-[36px]">Instagram</div>
           <div className="text-[15px] text-[#3d3d3d]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -74,7 +74,7 @@ const Home = () => {
           <div className="text-[#e53637] text-[14px] tracking-[2px] font-[700]">
             LATEST NEWS
           </div>
-          <div className="text-[#111] text-[36px] font-semibold">
+          <div className="text-[#111] text-[26px] md:text-[36px] font-semibold">
             Fashion New Trends
           </div>
           <div className="flex flex-wrap w-full gap-7 mt-5 justify-center">

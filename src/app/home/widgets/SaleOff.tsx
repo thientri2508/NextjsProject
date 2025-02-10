@@ -39,7 +39,7 @@ export const SaleOff = () => {
       <div className="w-[1170px] max-w-[85%] m-auto h-full flex flex-col lg:flex-row gap-y-10 justify-between items-center">
         <div className="relative w-[200px] h-[300px] whitespace-nowrap lg:scale-75 xl:scale-100 flex-shrink-0">
           <div className="absolute z-20 w-[600px] h-full bg-white top-0 left-[-480px]"></div>
-          <div className="absolute z-50 top-[15%] left-0 flex flex-col gap-5 text-[34px] text-[#b7b7b7] font-[600]">
+          <div className="absolute z-50 top-[15%] left-0 flex flex-col gap-5 text-[26px] sm:text-[32px] text-[#b7b7b7] font-[600]">
             <div>Clothings Hot</div>
             <div className="text-[#111]">Shoe Collection</div>
             <div>Accessories</div>
@@ -60,28 +60,28 @@ export const SaleOff = () => {
         </div>
         <div className="flex flex-col gap-7 font-[600] tracking-widest lg:scale-75 xl:scale-100">
           <div className="text-[14px] text-[#e53637]">DEAL OF THE WEEK</div>
-          <div className="text-[36px] text-[#111] lg:w-[360px] mt-[-20px]">
+          <div className="text-[32px] text-[#111] lg:w-[360px] mt-[-20px]">
             Multi-pocket Chest Bag Black
           </div>
-          <div className="flex text-[36px] text-[#111] gap-6 md:gap-16 lg:gap-6">
+          <div className="flex text-[26px] sm:text-[32px] text-[#111] gap-3 md:gap-16 lg:gap-6">
             <div className="flex flex-col items-center gap-4">
               <div>{timeLeft.days}</div>
-              <div className="text-[15px]">Days</div>
+              <div className="text-[12px] sm:text-[15px]">Days</div>
             </div>
-            <div className="text-[26px] mt-2">:</div>
+            <div className="text-[26px] sm:mt-2">:</div>
             <div className="flex flex-col items-center gap-4">
               <div>{timeLeft.hours}</div>
-              <div className="text-[15px]">Hours</div>
+              <div className="text-[12px] sm:text-[15px]">Hours</div>
             </div>
-            <div className="text-[26px] mt-2">:</div>
+            <div className="text-[26px] sm:mt-2">:</div>
             <div className="flex flex-col items-center gap-4">
               <div>{timeLeft.minutes}</div>
-              <div className="text-[15px]">Minutes</div>
+              <div className="text-[12px] sm:text-[15px]">Minutes</div>
             </div>
-            <div className="text-[26px] mt-2">:</div>
+            <div className="text-[26px] sm:mt-2">:</div>
             <div className="flex flex-col items-center gap-4">
               <div>{timeLeft.seconds}</div>
-              <div className="text-[15px]">Seconds</div>
+              <div className="text-[12px] sm:text-[15px]">Seconds</div>
             </div>
           </div>
           <div className="w-[167px] h-[48px] bg-black text-white center text-[13px] tracking-[4px] mt-5">
